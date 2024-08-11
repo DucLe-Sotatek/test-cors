@@ -30,26 +30,26 @@ public class DemoCorsHttpApplication {
 
     @GetMapping("/bad-request")
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public void badRequest() {
-        log.info("API Bad Request is called");
+    public List<String> badRequest() {
+        return Arrays.asList("Bad", "Request");
     }
 
     @GetMapping("/internal-server-error")
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public void internalServerError() {
-        log.info("API internal server error is called");
+    public List<String> internalServerError() {
+        return Arrays.asList("Internal", "Server", "Error");
     }
 
     @GetMapping("/unauthorized")
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
-    public void unauthorized() {
-        log.info("API Unauthorized is called");
+    public List<String> unauthorized() {
+        return List.of("Unauthorized");
     }
 
     @GetMapping("/forbidden")
     @ResponseStatus(HttpStatus.FORBIDDEN)
-    public void forbidden() {
-        log.info("API forbidden is called");
+    public List<String> forbidden() {
+        return Arrays.asList("Forbidden", "You Suck");
     }
 
 }
